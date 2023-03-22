@@ -1,0 +1,60 @@
+@use "mixins.scss";
+@use "variables.scss";
+
+body, a, p, h1, h2, h3, h4, h5, h6 {
+  margin: 0;
+  padding: 0;
+}
+
+.header {
+  @include mixins.header();
+}
+
+#createtour-main {
+  @include mixins.default-section();
+  @include mixins.default-text();
+  @include mixins.center-items(center);
+
+  .container {
+    @include mixins.default-container();
+
+    .tour-form {
+      display: flex;
+      flex-direction: column;
+
+      gap: 20px;
+    }
+
+    input[type="text"] {
+      @include mixins.default-input();
+    }
+
+    button {
+      @include mixins.default-button();
+      margin-left: auto;
+    }
+
+    .tour-details-tools {
+      button {
+        width: 100px;
+      }
+
+      .tour-details {
+        margin: 10px 0;
+        padding: 10px;
+        box-sizing: border-box;
+      }
+
+      .tour-detail {
+        display: flex;
+
+        p {
+          white-space: nowrap;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          max-width: 40ch;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,167 @@
+body, a, p, h1, h2, h3, h4, h5, h6 {
+  margin: 0;
+  padding: 0;
+}
+
+.header {
+  background-color: #f0f8ff;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+}
+.header .menu-mobile, .header .menu-btn {
+  display: none;
+}
+.header .menu {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 2rem;
+  height: 80px;
+  box-sizing: border-box;
+}
+.header .menu * {
+  white-space: nowrap;
+}
+.header .menu-logo {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #3e3e3e;
+}
+.header .menu-items {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+.header .menu-item {
+  font-size: 18px;
+  font-weight: 600;
+  padding: 5px 10px;
+  color: #3e3e3e;
+  transition: color 0.3s ease;
+}
+.header .menu-item a {
+  text-decoration: none;
+  color: inherit;
+}
+.header .menu-item a:hover {
+  color: #1e90ff;
+}
+.header .menu-item.active {
+  color: #1e90ff;
+  border-bottom: 2px solid #1e90ff;
+}
+.header .menu-item.active a {
+  color: inherit;
+}
+.header .menu-item + .menu-item {
+  margin-left: 1.5rem;
+}
+@media (max-width: 729px) {
+  .header .menu-desktop {
+    display: none;
+  }
+  .header .menu-btn {
+    display: block;
+    font-size: 25px;
+    color: #3F4045;
+    text-decoration: none;
+  }
+  .header .menu-mobile {
+    display: none;
+    position: absolute;
+    top: 80px;
+    left: 0;
+    background-color: #f0f8ff;
+    width: 100%;
+    height: 150px;
+  }
+  .header .menu-mobile.active {
+    display: block;
+  }
+  .header .menu-mobile ul {
+    margin-left: 20px;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    gap: 20px;
+  }
+  .header .menu-mobile ul li {
+    list-style: none;
+    margin: 0 !important;
+    padding: 0;
+  }
+}
+
+#login-main, #signup-main {
+  box-sizing: border-box;
+  padding: 80px 0;
+  font-size: 18px;
+  font-weight: 400;
+  color: #3F4045;
+  display: flex;
+  justify-content: center;
+}
+#login-main .container, #signup-main .container {
+  border-radius: 15px;
+  border: 1px solid #1e90ff;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 30px;
+  padding: 50px 10px;
+  box-sizing: border-box;
+  width: 90%;
+  background-color: #f0f8ff;
+  width: 40%;
+}
+#login-main .container form, #signup-main .container form {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+#login-main .container form .input-wrapper, #signup-main .container form .input-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+#login-main .container form input, #signup-main .container form input {
+  padding: 3px 10px;
+  width: 300px;
+  height: 25px;
+  border-radius: 15px;
+  border: none;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.4);
+}
+@media (max-width: 420px) {
+  #login-main .container form input, #signup-main .container form input {
+    width: 240px;
+  }
+}
+@media (max-width: 320px) {
+  #login-main .container form input, #signup-main .container form input {
+    width: 200px;
+  }
+}
+#login-main .container form button, #signup-main .container form button {
+  font-size: 17px;
+  width: 200px;
+  height: 30px;
+  border-radius: 15px;
+  border: none;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.4);
+  cursor: pointer;
+}
+
+@media (max-width: 900px) {
+  .container {
+    width: 90% !important;
+  }
+}
+
+/*# sourceMappingURL=auth.css.map */

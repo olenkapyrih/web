@@ -1,0 +1,44 @@
+@use "mixins.scss";
+@use "variables.scss";
+
+body, a, p, h1, h2, h3, h4, h5, h6 {
+  margin: 0;
+  padding: 0;
+}
+
+.header {
+  @include mixins.header();
+}
+
+#index-main {
+  @include mixins.default-section();
+  @include mixins.center-items(center);
+  min-height: calc(100vh - 80px);
+  flex-direction: column;
+  gap: 20px;
+
+  overflow: hidden;
+  background: url("../assets/main.jpg") center;
+  background-size: auto;
+
+  h1 {
+    font-size: 4.5vw;
+    color: variables.$button-background-color;
+  }
+
+  a {
+    font-size: 1.8vw;
+    color: variables.$dark-main;
+  }
+}
+
+@media (max-width: 729px) {
+  #index-main {
+    h1 {
+      font-size: 8vw !important;
+    }
+    a {
+      font-size: 5vw !important;
+    }
+  }
+}

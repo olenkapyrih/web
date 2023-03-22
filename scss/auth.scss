@@ -1,0 +1,54 @@
+@use "mixins.scss";
+@use "variables.scss";
+
+body, a, p, h1, h2, h3, h4, h5, h6 {
+  margin: 0;
+  padding: 0;
+}
+
+.header {
+  @include mixins.header();
+}
+
+#login-main, #signup-main {
+  @include mixins.default-section();
+  @include mixins.default-text();
+
+  display: flex;
+  justify-content: center;
+
+  .container {
+    @include mixins.default-container();
+    width: 40%;
+
+    form {
+      display: flex;
+      flex-direction: column;
+      text-align: center;
+      justify-content: center;
+      align-items: center;
+
+      gap: 20px;
+
+      .input-wrapper {
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+      }
+
+      input {
+        @include mixins.default-input();
+      }
+
+      button {
+        @include mixins.default-button();
+      }
+    }
+  }
+}
+
+@media (max-width: 900px) {
+  .container {
+    width: 90% !important;
+  }
+}

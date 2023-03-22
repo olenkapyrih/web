@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Create tour</title>
+    <link rel="stylesheet" href="styles/createtour.css  ">
+</head>
+<body>
+<header class="header">
+    <nav class="menu">
+        <a href="index.html" class="menu-logo">Travel Agency</a>
+        <ul class="menu-items menu-desktop">
+            <li class="menu-item"><a href="login.html">Log in</a></li>
+            <li class="menu-item"><a href="profile.html">My Profile</a></li>
+            <li class="menu-item"><a href="tours.html">All Tours</a></li>
+        </ul>
+        <a href="#" class="menu-btn">☰</a>
+        <div class="menu-mobile">
+            <ul class="menu-items">
+                <li class="menu-item"><a href="login.html">Log in</a></li>
+                <li class="menu-item"><a href="profile.html">My Profile</a></li>
+                <li class="menu-item"><a href="tours.html">All Tours</a></li>
+            </ul>
+        </div>
+    </nav>
+</header>
+
+<section id="createtour-main">
+    <div class="container">
+        <h1>Create tour</h1>
+        <form action="#" class="tour-form">
+            <label> Tour picture:
+                <input type="file">
+            </label>
+            <label>
+                Tour name:
+                <input type="text">
+            </label>
+            <label>
+                Tour description:
+                <input type="text">
+            </label>
+            <label>
+                Tour price (in USD):
+                <input type="text">
+            </label>
+            <div class="tour-details-tools">
+                <h2>Details:</h2>
+                <label>
+                    Input detail
+                    <input type="text">
+                </label>
+                <button>Add</button>
+                <div class="tour-details">
+                    <div class="tour-detail">
+                        <p>detail</p>
+                        <button>
+                            Delete
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <button type="submit">Create tour</button>
+        </form>
+    </div>
+</section>
+</body>
+</html>

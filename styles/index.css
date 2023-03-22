@@ -1,0 +1,127 @@
+body, a, p, h1, h2, h3, h4, h5, h6 {
+  margin: 0;
+  padding: 0;
+}
+
+.header {
+  background-color: #f0f8ff;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+}
+.header .menu-mobile, .header .menu-btn {
+  display: none;
+}
+.header .menu {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 2rem;
+  height: 80px;
+  box-sizing: border-box;
+}
+.header .menu * {
+  white-space: nowrap;
+}
+.header .menu-logo {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #3e3e3e;
+}
+.header .menu-items {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+.header .menu-item {
+  font-size: 18px;
+  font-weight: 600;
+  padding: 5px 10px;
+  color: #3e3e3e;
+  transition: color 0.3s ease;
+}
+.header .menu-item a {
+  text-decoration: none;
+  color: inherit;
+}
+.header .menu-item a:hover {
+  color: #1e90ff;
+}
+.header .menu-item.active {
+  color: #1e90ff;
+  border-bottom: 2px solid #1e90ff;
+}
+.header .menu-item.active a {
+  color: inherit;
+}
+.header .menu-item + .menu-item {
+  margin-left: 1.5rem;
+}
+@media (max-width: 729px) {
+  .header .menu-desktop {
+    display: none;
+  }
+  .header .menu-btn {
+    display: block;
+    font-size: 25px;
+    color: #3F4045;
+    text-decoration: none;
+  }
+  .header .menu-mobile {
+    display: none;
+    position: absolute;
+    top: 80px;
+    left: 0;
+    background-color: #f0f8ff;
+    width: 100%;
+    height: 150px;
+  }
+  .header .menu-mobile.active {
+    display: block;
+  }
+  .header .menu-mobile ul {
+    margin-left: 20px;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    gap: 20px;
+  }
+  .header .menu-mobile ul li {
+    list-style: none;
+    margin: 0 !important;
+    padding: 0;
+  }
+}
+
+#index-main {
+  box-sizing: border-box;
+  padding: 80px 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: calc(100vh - 80px);
+  flex-direction: column;
+  gap: 20px;
+  overflow: hidden;
+  background: url("../assets/main.jpg") center;
+  background-size: auto;
+}
+#index-main h1 {
+  font-size: 4.5vw;
+  color: #1e90ff;
+}
+#index-main a {
+  font-size: 1.8vw;
+  color: #3F4045;
+}
+
+@media (max-width: 729px) {
+  #index-main h1 {
+    font-size: 8vw !important;
+  }
+  #index-main a {
+    font-size: 5vw !important;
+  }
+}
+
+/*# sourceMappingURL=index.css.map */

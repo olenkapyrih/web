@@ -1,0 +1,169 @@
+@use "variables.scss";
+
+@mixin header {
+  background-color: variables.$primary-color;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+
+  .menu-mobile, .menu-btn {
+    display: none;
+  }
+
+  .menu {
+    * {
+      white-space: nowrap;
+    }
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem 2rem;
+    height: 80px;
+    box-sizing: border-box;
+  }
+
+  .menu-logo {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #3e3e3e;
+  }
+
+  .menu-items {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+  }
+
+  .menu-item {
+    font-size: variables.$menu-font-size;
+    font-weight: variables.$menu-font-weight;
+    padding: variables.$menu-item-padding;
+    color: #3e3e3e;
+    transition: color 0.3s ease;
+
+    a {
+      text-decoration: none;
+      color: inherit;
+
+      &:hover {
+        color: #1e90ff;
+      }
+    }
+
+    &.active {
+      color: #1e90ff;
+      border-bottom: 2px solid #1e90ff;
+
+      a {
+        color: inherit;
+      }
+    }
+
+    & + .menu-item {
+      margin-left: 1.5rem;
+    }
+  }
+
+  @media (max-width: 729px) {
+    .menu-desktop {
+      display: none;
+    }
+
+    .menu-btn {
+      display: block;
+      font-size: 25px;
+      color: variables.$dark-main;
+      text-decoration: none;
+    }
+
+    .menu-mobile {
+      display: none;
+      position: absolute;
+      top: 80px;
+      left: 0;
+      background-color: variables.$primary-color;
+      width: 100%;
+      height: 150px;
+
+      &.active {
+        display: block;
+      }
+
+      ul {
+        margin-left: 20px;
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: start;
+        gap: 20px;
+
+        li {
+          list-style: none;
+          margin: 0 !important;
+          padding: 0;
+        }
+      }
+    }
+  }
+}
+
+@mixin default-text {
+  font-size: variables.$font-size;
+  font-weight: variables.$font-weight;
+  color: variables.$dark-main;
+}
+
+@mixin default-section {
+  box-sizing: border-box;
+  padding: 80px 0;
+}
+
+@mixin default-border {
+  border-radius: 15px;
+  border: 1px solid variables.$button-background-color;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.4);
+}
+
+@mixin center-items($justify-content) {
+  display: flex;
+  align-items: center;
+  justify-content: $justify-content;
+}
+
+@mixin default-input() {
+  padding: 3px 10px;
+  width: 300px;
+  height: 25px;
+  border-radius: 15px;
+  border: none;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.4);
+
+  @media (max-width: 420px) {
+    width: 240px;
+  }
+
+  @media (max-width: 320px) {
+    width: 200px;
+  }
+}
+
+@mixin default-button() {
+  font-size: 17px;
+  width: 200px;
+  height: 30px;
+  border-radius: 15px;
+  border: none;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.4);
+  cursor: pointer;
+}
+
+@mixin default-container() {
+  @include default-border();
+  @include center-items(center);
+  flex-direction: column;
+  gap: 30px;
+  padding: 50px 10px;
+  box-sizing: border-box;
+  width: 90%;
+  background-color: variables.$primary-color;
+}

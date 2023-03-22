@@ -1,0 +1,48 @@
+@use "mixins.scss";
+
+body, a, p, h1, h2, h3, h4, h5, h6 {
+  margin: 0;
+  padding: 0;
+}
+
+.header {
+  @include mixins.header();
+}
+
+#tour-main {
+  @include mixins.default-section();
+  @include mixins.default-text();
+  @include mixins.center-items(center);
+
+  .container {
+    @include mixins.default-container();
+    align-items: start;
+
+    h1 {
+      font-size: 4vw;
+    }
+
+    .tour-photo {
+      width: 100%;
+      aspect-ratio: auto;
+      border-radius: 15px;
+    }
+
+    .tour-details {
+      margin: 0;
+    }
+
+    .tour-checkout {
+      width: 100%;
+      display: flex;
+      justify-content: space-around;
+
+      button {
+        @include mixins.default-button();
+        font-size: 20px;
+        width: 120px;
+        height: 40px;
+      }
+    }
+  }
+}

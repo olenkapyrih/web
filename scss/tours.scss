@@ -1,0 +1,115 @@
+@use "mixins.scss";
+@use "variables.scss";
+
+body, a, p, h1, h2, h3, h4, h5, h6 {
+  margin: 0;
+  padding: 0;
+}
+
+.header {
+  @include mixins.header();
+}
+
+#tours-main {
+  @include mixins.default-section();
+  @include mixins.default-text();
+  @include mixins.center-items(center);
+
+  .container {
+    width: 90%;
+  }
+
+  .tours-header {
+    @include mixins.default-border();
+    @include mixins.center-items(space-around);
+
+    background-color: variables.$primary-color;
+
+    box-sizing: border-box;
+    padding: 10px;
+
+    margin-bottom: 20px;
+
+    a {
+      text-decoration: none;
+      color: green;
+      text-transform: uppercase;
+      font-weight: bold;
+    }
+  }
+
+  .tours-paging {
+    margin: 0;
+    padding: 0;
+
+    display: flex;
+    gap: 15px;
+
+    li {
+      list-style: none;
+    }
+  }
+
+  .tours {
+    @include mixins.default-border();
+
+    background-color: variables.$primary-color;
+
+    min-height: 500px;
+    padding: 10px;
+    box-sizing: border-box;
+
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+    .tour {
+      @include mixins.center-items(none);
+
+      width: 100%;
+      height: 250px;
+
+      border: 1px solid variables.$button-background-color;
+      border-radius: 5px;
+
+      padding: 10px;
+      box-sizing: border-box;
+
+      background-color: variables.$secondary-color;
+
+      .tour-photo {
+        height: 100%;
+        aspect-ratio: 1.5;
+        border-radius: 5px;
+      }
+
+      .tour-info {
+        margin-left: 40px;
+
+        .tour-name {
+          font-size: 26px;
+          font-weight: bold;
+          color: variables.$dark-main;
+        }
+      }
+
+      .tour-tools {
+        width: 100px;
+        text-align: left;
+        margin-left: auto;
+        font-size: 20px;
+      }
+    }
+  }
+}
+
+@media (max-width: 912px) {
+  .tour {
+    flex-direction: column;
+    height: auto !important;
+
+    img {
+      width: 90%;
+    }
+  }
+}
